@@ -105,7 +105,7 @@ const ChatView = ({ allChat, updateChat, messages, setMessages }) => {
                   <div key={`message-${index}`}>
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <img
-                        src="/src/assets/Ellipse 139.png"
+                        src="/src/assets/Ellipse_139.png"
                         alt="Profile Image"
                         className="msgImg"
                       />
@@ -166,7 +166,7 @@ const ChatView = ({ allChat, updateChat, messages, setMessages }) => {
                       </div>
                       <div className="resDiv">
                         <img
-                          src="/src/assets/image_29-removebg-preview 1.png"
+                          src="/src/assets/image_29-removebg-preview_1.png"
                           alt="Profile Image"
                           className="resImg"
                         />
