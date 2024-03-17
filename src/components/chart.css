@@ -1,0 +1,216 @@
+.gradientBox {
+    position: relative;
+    margin: 5px;
+    display: inline-block;
+    font-size: 10px;
+  }
+  
+  .gradientBox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px; 
+    background: linear-gradient(
+        128.49deg,
+        #1554f0 19.86%,
+        #11d6b9 68.34%
+      );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .myBtn{
+    display: inline-flex;
+    flex-shrink: 0;
+    cursor: pointer;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-color: transparent;
+    text-align: center;
+    border-radius: var(--rounded-btn, 0.5rem);
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    border-width: var(--border-btn, 1px);
+    color: white
+  }
+
+  .chatCount {
+    background-color: grey;
+    width: 15px;
+    border-radius: 5px
+  }
+  .myBtn1{
+    cursor: pointer;
+    color: white;
+    height: 20px !important;
+    border: 1px solid grey;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px;
+  }
+
+  .regButton {
+    color: white !important;
+    font-size: 10px !important;
+    margin-left: 40% !important;
+    border-radius: 10px !important;
+    height: 50px !important;
+    margin-bottom: 10px !important;
+    width: 200px !important
+  }
+
+  .msgImg {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    margin-right: 10px !important;
+  }
+
+  .msgCard {
+    width: 100% !important;
+    border: 1px solid grey !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 10px !important;
+  }
+
+  .msgBody {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important
+  }
+
+  .cDiv {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 1 !important
+  }
+
+  .cDspan{
+    display: inline-flex !important;
+    align-items: center !important;
+    position: relative !important;
+    top: -7px !important
+  }
+
+  .shareSpan {
+    display: inline-flex !important;
+    align-items: center !important;
+    position: relative !important;
+    top: -7px !important
+  }
+
+  .delSpan {
+    display: inline-flex !important;
+    align-items: center !important;
+    position: relative !important;
+    top: -7px !important
+  }
+
+  .resImg {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    margin-right: 10px !important
+  }
+
+  .resCard {
+    width: 100% !important;
+    border: 1px solid grey !important;
+    height: 190px !important;
+    border-radius: 10px !important
+  }
+
+  .resThumb {
+    display: flex !important;
+    flex-direction: row !important;
+    float: right !important;
+    margin: 5px !important
+  }
+
+  .resDiv {
+    display: flex !important;
+    align-items: center !important;
+    margin-top: 23px !important
+  }
+
+  .logoutBtn {
+    color: white !important;
+    float: right !important;
+    margin-right: -90% !important;
+    font-size: 10px !important
+  }
+
+  .newChatBtn {
+    width: 180px !important;
+    height: 32px !important;
+    padding-left: 15px !important;
+    padding-bottom: 10px !important;
+    padding-top: 4px !important
+  }
+
+  .newChatp {
+    width: 120px !important;
+    color: white !important;
+    font-size: 12px !important
+  }
+
+  .newChatIcon {
+    width: 35px !important;
+    margin-right: 5px !important;
+    height: 20px !important 
+  }
+
+  .myChatDiv {
+    display: flex !important;
+    align-items: center !important;
+    height: 20px !important 
+  }
+
+  .myChatHead {
+    flex: 1 !important;
+    width: 170px !important;
+    color: white !important;
+    height: 20px !important
+  }
+
+  .myChatBtn {
+    margin-left: 2px !important;
+    border-radius: 5px !important;
+    padding: 2px !important 
+  }
+
+  .savedChatBtn {
+    min-height: 10px !important;
+    font-size: 9px !important;
+    margin: 6px !important;
+    border: 1px solid grey !important
+  }
+
+  .sortBtn {
+    margin-left: 2px !important;
+    border-radius: 5px !important;
+    padding: 2px !important
+  }
+
+  .allChatDiv {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 10px !important
+  }
+
+  .accountSet {
+    font-size: xx-small;
+  }

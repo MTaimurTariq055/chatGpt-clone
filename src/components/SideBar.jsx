@@ -1,15 +1,19 @@
 /* eslint-disable */
 import { useState, useEffect } from "react";
 import {
-  MdClose,
   MdMenu,
-  MdOutlineCoffee,
-  MdOutlineVpnKey,
-  MdAdd,
+  MdOutlineArrowRight,
+  MdChat,
+  MdSave,
+  MdDelete,
+  MdLink,
+  MdSort,
 } from "react-icons/md";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { AiOutlineGithub } from "react-icons/ai";
+import "./chart.css";
 
-const SideBar = ({allChat, updateChat, messages, setMessages}) => {
+const SideBar = ({ allChat, updateChat, messages, setMessages }) => {
   const [open, setOpen] = useState(true);
 
   function handleResize() {
@@ -33,65 +37,112 @@ const SideBar = ({allChat, updateChat, messages, setMessages}) => {
           } flex flex-row items-center gap-2 mx-auto w-full`}
         >
           <img
-            src="https://cdn1.vectorstock.com/i/1000x1000/73/40/user-icon-male-person-symbol-profile-avatar-vector-20787340.jpg"
+            src="/src/assets/Group 39488.png"
             alt="logo"
             className="w-6 h-6"
           />
-          <h1 className={` ${!open && "scale-0 hidden"}`}>John Carter</h1>
+          <div>
+            <h1 className={` ${!open && "scale-0 hidden"}`}>John Carter</h1>
+            <p className="accountSet">Account Settings</p>
+          </div>
         </div>
         <div
           className="mx-auto btn btn-square btn-ghost"
           onClick={() => setOpen(!open)}
         >
-          {open ? <MdClose size={15} /> : <MdMenu size={15} />}
+          {open ? <MdOutlineArrowRight size={25} /> : <MdMenu size={15} />}
         </div>
       </div>
 
       <ul className="w-full menu rounded-box">
         <li>
-          <button className="border border-slate-500" onClick={() => setMessages("")}>
-            <p className={`${!open && "hidden"}`}>New Chat</p>
-            <MdAdd size={15} />
+          <button
+            className="border border-slate-500 newChatBtn"
+            onClick={() => setMessages("")}
+          >
+            <p className={`${!open && "hidden"} newChatp`}>New Chat</p>
+            <img
+              src="/src/assets/New Chat Icon.png"
+              alt="Custom Icon"
+              className="newChatIcon"
+            />
           </button>
         </li>
       </ul>
-      <div className="container">
-        <div className="row">
-          <button
-            className="btn"
-            style={{
-              border: "1px solid grey",
-              height: "10px !important",
-              minHeight: "10px",
-              maxWidth: "80px",
-              fontSize: "9px",
-              margin: "6px",
-            }}
+      {messages?.length > 0 && (
+        <>
+          <div className="myChatDiv">
+            <h3 placeholder="" className="myChatHead">
+              My Chats
+            </h3>
+            <Button
+              variant="outline-secondary"
+              id="button-addon3"
+              className="myChatBtn"
+            >
+              <MdSort />
+            </Button>
+          </div>
+          <div className="container">
+            <div className="row">
+              <button
+                className="myBtn gradientBox"
+                style={{
+                  height: "10px !important",
+                  fontSize: "9px",
+                  margin: "6px",
+                }}
+              >
+                <MdChat size={12} style={{ padding: "2px" }} />
+                Chats &nbsp; <p className="chatCount"> 12 </p>
+              </button>
+              <button className="myBtn savedChatBtn">
+                <MdSave size={12} style={{ padding: "2px" }} />
+                Saved &nbsp; <p className="chatCount"> 26 </p>
+              </button>
+            </div>
+          </div>
+          <InputGroup
+            style={{ display: "flex", alignItems: "center", height: "20px" }}
           >
-            Chats &nbsp; 12
-          </button>
-          <button
-            className="btn"
-            style={{
-              border: "1px solid grey",
-              height: "10px !important",
-              minHeight: "10px",
-              maxWidth: "80px",
-              fontSize: "9px",
-              margin: "6px",
-            }}
-          >
-            Saved &nbsp; 12
-          </button>
-        </div>
-      </div>
-      {allChat.map((item, index) => (
-        <p key={index}>{item.message}</p>
-      ))} 
+            <FormControl
+              placeholder=""
+              aria-label="Search"
+              aria-describedby="basic-addon2"
+              style={{ flex: 1, width: "170px" }}
+            />
+            <Button
+              variant="outline-secondary"
+              id="button-addon3"
+              className="sortBtn"
+            >
+              <MdSort />
+            </Button>
+          </InputGroup>
+          <div>
+            {allChat.map((item, index) => (
+              <div key={index} className="allChatDiv">
+                <MdSave size={25} style={{ marginRight: "8px" }} />
+                <div>
+                  <h5 style={{ fontSize: "10px", color: "white" }}>
+                    {item.message}
+                  </h5>
+                  <p style={{ fontSize: "6px" }}>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
       <ul className="absolute bottom-0 w-full gap-1 menu rounded-box">
         <li>
           <a target="_blank">
-            <MdOutlineCoffee size={15} />
+            <MdDelete size={15} />
             <p className={`${!open && "hidden"}`}>Clear Conversation</p>
           </a>
         </li>
@@ -103,7 +154,7 @@ const SideBar = ({allChat, updateChat, messages, setMessages}) => {
         </li>
         <li>
           <a>
-            <MdOutlineVpnKey size={15} />
+            <MdLink size={15} />
             <p className={`${!open && "hidden"}`}>Updates & FAQ</p>
           </a>
         </li>
