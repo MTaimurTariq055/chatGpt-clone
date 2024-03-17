@@ -37,7 +37,7 @@ const SideBar = ({ allChat, updateChat, messages, setMessages }) => {
           } flex flex-row items-center gap-2 mx-auto w-full`}
         >
           <img
-            src="/src/assets/Group_39488.png"
+            src="/images/Group_39488.png"
             alt="logo"
             className="w-6 h-6"
           />
@@ -62,7 +62,7 @@ const SideBar = ({ allChat, updateChat, messages, setMessages }) => {
           >
             <p className={`${!open && "hidden"} newChatp`}>New Chat</p>
             <img
-              src="/src/assets/NewChat_Icon.png"
+              src="/images/NewChat_Icon.png"
               alt="Custom Icon"
               className="newChatIcon"
             />
